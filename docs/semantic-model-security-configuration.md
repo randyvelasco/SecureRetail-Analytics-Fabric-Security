@@ -2,8 +2,8 @@
 
 **Workspace:** `SecureRetail Analytics`  
 **Semantic model:** `sm_secure_retail`  
-**Source:** Inspected in Tabular Editor 2  
-**Backup status:** Partial — the Retail Dynamic RLS expression below was copied from the live model. Executive Access filter metadata and role-level OLS properties still need to be inspected and recorded.
+**Inspection tool:** Tabular Editor 2  
+**Backup status:** Partial — the Retail Dynamic RLS expression and the absence of a row filter on Executive Access have been inspected. OLS permissions still need to be rechecked in the live model.
 
 ## Roles
 
@@ -34,9 +34,11 @@ RETURN
 
 The effective result depends on the model's table relationships, permissions, and the access path used. The expression alone does not establish end-to-end security.
 
-## Executive Access
+## Executive Access — row filter
 
-The project configuration and prior semantic-model tests indicate that this role is intended to allow access to all nine configured regions. The exact deployed filter expression or absence of a filter has **not yet been captured in this document**. Inspect the live role in Tabular Editor 2 before treating that detail as exported.
+**Observed in Tabular Editor 2:** No row filter is configured for this role.
+
+This means the role does not apply a role-specific RLS filter on the inspected tables. In the intended setup, Executive Access can therefore see all rows available to the semantic model, subject to other model restrictions and the effective permissions/access path. Confirm role membership is limited to intended executive users.
 
 ## Object-level security (OLS)
 
