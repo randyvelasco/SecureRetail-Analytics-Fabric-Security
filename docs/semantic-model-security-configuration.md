@@ -3,7 +3,7 @@
 **Workspace:** `SecureRetail Analytics`  
 **Semantic model:** `sm_secure_retail`  
 **Inspection tool:** Tabular Editor 2  
-**Backup status:** Partial — the Retail Dynamic RLS expression and the absence of a row filter on Executive Access have been inspected. OLS permissions still need to be rechecked in the live model.
+**Backup status:** Partial — the Retail Dynamic RLS expression, the absence of a row filter on Executive Access, and the listed OLS permissions have been inspected in the live model.
 
 ## Roles
 
@@ -42,7 +42,7 @@ This means the role does not apply a role-specific RLS filter on the inspected t
 
 ## Object-level security (OLS)
 
-Previously documented configuration:
+**Observed in Tabular Editor 2:** The following column permissions are configured:
 
 | Column | Retail Dynamic RLS | Executive Access |
 |---|---|---|
@@ -50,7 +50,7 @@ Previously documented configuration:
 | `Phone` | None | Read |
 | `Cost` | None | Read |
 
-These permissions are recorded from prior project testing/configuration notes and still need to be rechecked in Tabular Editor 2 as part of this export.
+`None` is intended to prevent users in the Retail Dynamic RLS role from accessing these columns through the semantic model; `Read` permits users in Executive Access to access them, subject to other applicable restrictions and permissions.
 
 ## Export and safety notes
 
@@ -58,3 +58,4 @@ These permissions are recorded from prior project testing/configuration notes an
 - Review this document against the current live model after changes to roles or permissions.
 - Do not commit credentials, tokens, passwords, API keys, personal data, or tenant secrets.
 - This is a partial backup, not a complete export of the semantic model or its permissions.
+- The OLS settings documented here do not by themselves prove that sensitive data is protected through every access path. Review the Lakehouse/OneLake permissions and Direct Lake access configuration separately.
