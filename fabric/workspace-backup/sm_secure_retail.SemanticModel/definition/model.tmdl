@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectLake - lh_secure_retail"]
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","TMDLView_Desktop"]
+
+annotation __TEdtr = 1
+
+ref table gold_dim_customer
+ref table gold_dim_date
+ref table gold_dim_product
+ref table gold_dim_region
+ref table gold_fact_sales
+ref table silver_user_access
+ref table silver_user_region
+
+ref role Retail_Dynamic_RLS
+ref role 'Executive Access'
+

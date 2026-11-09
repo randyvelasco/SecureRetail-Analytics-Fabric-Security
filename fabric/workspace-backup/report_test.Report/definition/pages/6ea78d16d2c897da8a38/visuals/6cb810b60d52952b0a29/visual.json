@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "6cb810b60d52952b0a29",
+  "position": {
+    "x": 9.9815877829524524,
+    "y": 0,
+    "z": 0,
+    "height": 320.65850752734758,
+    "width": 571.445900574028,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_dim_region"
+                    }
+                  },
+                  "Property": "Branch"
+                }
+              },
+              "queryRef": "gold_dim_region.Branch",
+              "nativeQueryRef": "Branch"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_dim_region"
+                    }
+                  },
+                  "Property": "Province"
+                }
+              },
+              "queryRef": "gold_dim_region.Province",
+              "nativeQueryRef": "Province"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_dim_region"
+                    }
+                  },
+                  "Property": "RegionKey"
+                }
+              },
+              "queryRef": "gold_dim_region.RegionKey",
+              "nativeQueryRef": "RegionKey"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_dim_region"
+                    }
+                  },
+                  "Property": "IslandGroup"
+                }
+              },
+              "queryRef": "gold_dim_region.IslandGroup",
+              "nativeQueryRef": "IslandGroup"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "eb8b7a5bc5a44ec1fefd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_dim_region"
+              }
+            },
+            "Property": "Branch"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1b8a2f820383450b7fa8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_dim_region"
+              }
+            },
+            "Property": "Province"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ac54d21e726a4f0f5b4d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_dim_region"
+              }
+            },
+            "Property": "RegionKey"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9a94e5e05cd3fce496f6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_dim_region"
+              }
+            },
+            "Property": "IslandGroup"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

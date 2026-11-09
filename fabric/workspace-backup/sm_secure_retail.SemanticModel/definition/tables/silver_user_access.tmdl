@@ -1,0 +1,29 @@
+table silver_user_access
+	lineageTag: 8c7dfb7d-1c2f-4453-9207-f9f95afae722
+	sourceLineageTag: [dbo].[silver_user_access]
+
+	column UserEmail
+		dataType: string
+		lineageTag: 9235b99b-7058-491a-9ba2-4a182f8ff19a
+		sourceLineageTag: UserEmail
+		summarizeBy: none
+		sourceColumn: UserEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccessLevel
+		dataType: string
+		lineageTag: daf1d2a2-a015-4258-9e9e-38193102ba8c
+		sourceLineageTag: AccessLevel
+		summarizeBy: none
+		sourceColumn: AccessLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition silver_user_access = entity
+		mode: directLake
+		source
+			entityName: silver_user_access
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_secure_retail'
+

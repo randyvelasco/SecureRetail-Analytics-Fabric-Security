@@ -1,0 +1,13 @@
+role 'Executive Access'
+	modelPermission: read
+
+	tablePermission gold_dim_customer
+
+		columnPermission Email = read
+
+		columnPermission Phone = read
+
+	tablePermission gold_fact_sales
+
+		columnPermission Cost = read
+
