@@ -1,0 +1,57 @@
+table gold_dim_customer
+	lineageTag: 6cb3f37b-20b6-4a84-9c4f-f00a2a6d76a6
+	sourceLineageTag: [dbo].[gold_dim_customer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 08eabf6d-4748-47cc-8495-88a2347beab7
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: 6ee605ef-c196-4934-9a9d-c7aa9d924bbe
+		sourceLineageTag: CustomerName
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 64616782-a9b6-45ab-b735-e8d508b30914
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 4ea67ff3-1e28-49b8-8cda-09e0fdf0941c
+		sourceLineageTag: Phone
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerSegment
+		dataType: string
+		lineageTag: ca1fb0b9-ce18-4e13-850b-b568eacc9bea
+		sourceLineageTag: CustomerSegment
+		summarizeBy: none
+		sourceColumn: CustomerSegment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_customer = entity
+		mode: directLake
+		source
+			entityName: gold_dim_customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_secure_retail'
+

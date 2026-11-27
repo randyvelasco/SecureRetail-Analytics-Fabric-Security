@@ -1,0 +1,5 @@
+role 'Executive Access'
+	modelPermission: read
+
+	annotation PBI_Id = 2968cc78c6f0486abec3e804acb7eb6b
+

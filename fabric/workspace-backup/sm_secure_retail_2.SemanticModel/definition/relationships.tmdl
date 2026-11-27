@@ -1,0 +1,16 @@
+relationship 2a97f41f-30e8-a7e4-3abb-39c6cf9f7573
+	fromColumn: gold_fact_sales.CustomerKey
+	toColumn: gold_dim_customer.CustomerKey
+
+relationship 879c3a59-8b47-466b-e45c-989e4a2cb6fa
+	fromColumn: gold_fact_sales.DateKey
+	toColumn: gold_dim_date.DateKey
+
+relationship b787fb6c-246e-4be9-2641-c904a0ab6fe6
+	fromColumn: gold_fact_sales.ProductKey
+	toColumn: gold_dim_product.ProductKey
+
+relationship f5aca25d-4f48-833e-09d2-94b991297ae7
+	fromColumn: gold_fact_sales.RegionKey
+	toColumn: gold_dim_region.RegionKey
+

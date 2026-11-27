@@ -1,0 +1,30 @@
+table silver_user_region
+	lineageTag: 0b3341cb-ec10-4941-9695-1fb13711d62d
+	sourceLineageTag: [dbo].[silver_user_region]
+
+	column UserEmail
+		dataType: string
+		lineageTag: 55f8cc10-8862-48f3-95b0-a0c18261f57f
+		sourceLineageTag: UserEmail
+		summarizeBy: none
+		sourceColumn: UserEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 788f1b36-5758-4379-87f9-460fd6a3b5fa
+		sourceLineageTag: RegionKey
+		summarizeBy: count
+		sourceColumn: RegionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition silver_user_region = entity
+		mode: directLake
+		source
+			entityName: silver_user_region
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_secure_retail'
+

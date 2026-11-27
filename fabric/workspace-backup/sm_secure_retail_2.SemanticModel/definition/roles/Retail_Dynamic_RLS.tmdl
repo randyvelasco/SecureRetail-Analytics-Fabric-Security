@@ -1,0 +1,16 @@
+role Retail_Dynamic_RLS
+	modelPermission: read
+
+	tablePermission gold_dim_region =
+			VAR CurrentUser = LOWER(USERPRINCIPALNAME())
+			RETURN
+			    COUNTROWS(
+			        FILTER(
+			            silver_user_region,
+			            LOWER(silver_user_region[UserEmail]) = CurrentUser
+			                && silver_user_region[RegionKey] = gold_dim_region[RegionKey]
+			        )
+			    ) > 0
+
+	annotation PBI_Id = a4041bca2d4f487682b2f97b920fc866
+

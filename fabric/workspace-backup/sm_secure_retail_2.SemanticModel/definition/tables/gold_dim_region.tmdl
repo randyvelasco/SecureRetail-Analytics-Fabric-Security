@@ -1,0 +1,48 @@
+table gold_dim_region
+	lineageTag: 0a1bc4db-e90d-435b-bc43-5df19816c8c7
+	sourceLineageTag: [dbo].[gold_dim_region]
+
+	column RegionKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 124d564a-b25d-4762-8886-1108ab04cea0
+		sourceLineageTag: RegionKey
+		summarizeBy: none
+		sourceColumn: RegionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IslandGroup
+		dataType: string
+		lineageTag: 26a7cb02-33f7-479f-a287-32f70b25777b
+		sourceLineageTag: IslandGroup
+		summarizeBy: none
+		sourceColumn: IslandGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column Province
+		dataType: string
+		lineageTag: cf143654-30bb-45c7-a10d-249dc35f7988
+		sourceLineageTag: Province
+		summarizeBy: none
+		sourceColumn: Province
+
+		annotation SummarizationSetBy = Automatic
+
+	column Branch
+		dataType: string
+		lineageTag: 8e5916a2-20f8-49c5-aae9-a2c6a5d8395a
+		sourceLineageTag: Branch
+		summarizeBy: none
+		sourceColumn: Branch
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_dim_region = entity
+		mode: directLake
+		source
+			entityName: gold_dim_region
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_secure_retail'
+

@@ -1,0 +1,70 @@
+table gold_dim_product
+	lineageTag: 50893e8f-2dd9-41d1-a227-5dd998e3742e
+	sourceLineageTag: [dbo].[gold_dim_product]
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fbbd565-ae1b-458e-9d06-90b273b77e38
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 0464bf2b-8597-45dd-80ac-5322214c8b61
+		sourceLineageTag: ProductName
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 2155ae60-f249-4d7f-8db6-17b6b967a775
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcategory
+		dataType: string
+		lineageTag: b2040bb7-9e1a-4390-a9f9-df2d3551630e
+		sourceLineageTag: Subcategory
+		summarizeBy: none
+		sourceColumn: Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitCost
+		dataType: double
+		lineageTag: 9398873e-4451-4219-a278-605c655c76e1
+		sourceLineageTag: UnitCost
+		summarizeBy: none
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 717be6e3-7466-4bbf-b2bf-f1f7bde42664
+		sourceLineageTag: UnitPrice
+		summarizeBy: none
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_dim_product = entity
+		mode: directLake
+		source
+			entityName: gold_dim_product
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_secure_retail'
+
